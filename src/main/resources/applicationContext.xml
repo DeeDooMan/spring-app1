@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans  xmlns="http://www.springframework.org/schema/beans"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xmlns:context="http://www.springframework.org/schema/context"
-        xsi:schemaLocation="http://www.springframework.org/schema/beans
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
@@ -22,18 +22,29 @@
     </bean>
 
     <bean id="musicPlayer" class="kg.isaev.springcources.MusicPlayer">
-<!--        <property name="musicList" ref="musicBean"/>-->
+        <!--        <property name="musicList" ref="musicBean"/>-->
 
         <property name="name" value="${musicPlayer.name}"/>
         <property name="volume" value="${musicPlayer.volume}"/>
 
-        <constructor-arg>
+        <!--        Через Конструктор-->
+        <!--        <constructor-arg>-->
+        <!--            <list>-->
+        <!--                <ref bean="rockMusicBean" />-->
+        <!--                <ref bean="lolMusicBean" />-->
+        <!--                <ref bean="classicalMusicBean" />-->
+        <!--            </list>-->
+        <!--        </constructor-arg>-->
+
+        <!--        Через Сеттер-->
+        <property name="musicList">
             <list>
-                <ref bean="rockMusicBean" />
-                <ref bean="lolMusicBean" />
-                <ref bean="classicalMusicBean" />
+                <ref bean="classicalMusicBean"/>
+                <ref bean="rockMusicBean"/>
+                <ref bean="lolMusicBean"/>
             </list>
-        </constructor-arg>
+        </property>
+
     </bean>
 
 </beans>
