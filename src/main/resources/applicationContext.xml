@@ -21,7 +21,8 @@
           class="kg.isaev.springcources.ClassicalMusic">
     </bean>
 
-    <bean id="musicPlayer" class="kg.isaev.springcources.MusicPlayer">
+    <bean id="musicPlayer" class="kg.isaev.springcources.MusicPlayer"
+          scope="prototype">
         <!--        <property name="musicList" ref="musicBean"/>-->
 
         <property name="name" value="${musicPlayer.name}"/>
